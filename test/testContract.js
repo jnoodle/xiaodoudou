@@ -1,6 +1,6 @@
 const {Conflux} = require('js-conflux-sdk');
 
-const abi = [
+const abi =  [
     {
         "inputs": [],
         "stateMutability": "nonpayable",
@@ -775,16 +775,21 @@ const abi = [
 ]
 
 async function main() {
-    const conflux = new Conflux({
+    let conflux = new Conflux({
         url: 'https://test.confluxrpc.com',
         networkId: 1,
     });
 
-    console.log(conflux.version);
-    const contract = conflux.Contract({abi, address: 'cfxtest:achtudp39dwa12n13cxcdwtr9un4mfrmaefgr3c8c1'});
+    conflux = new Conflux({
+        url: 'https://main.confluxrpc.com',
+        networkId: 1029,
+    });
 
-    const name = await contract.tokenURI(0)
-    console.log(name);
+    console.log(conflux.version);
+    const contract = conflux.Contract({abi, address: 'cfx:aca6npas0vmjndf5aavz2e0g2f12u598jpx1a46k2a'});
+
+    const result = await contract.name()
+    console.log(result);
 }
 
 main();

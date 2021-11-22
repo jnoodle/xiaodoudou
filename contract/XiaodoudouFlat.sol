@@ -2185,6 +2185,6 @@ pragma solidity ^0.8.0;
 
 
 contract XiaoDouDouNFT is ERC721PresetMinterPauserAutoId, ERC721Holder {
-    constructor() ERC721PresetMinterPauserAutoId("XiaoDouDou", "DOU", "https://my-json-server.typicode.com/jnoodle/xiaodoudou/metadata") {
+    constructor() ERC721PresetMinterPauserAutoId("XiaoDouDou", "DOU", "https://my-json-server.typicode.com/jnoodle/xiaodoudou/metadata/") {
     }
 }
